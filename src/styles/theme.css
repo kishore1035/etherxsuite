@@ -1,0 +1,209 @@
+/* CLEAN THEME SYSTEM - MANDATORY TOKENS ONLY */
+:root {
+  /* Light Mode */
+  --bg-main: #FFFFFF;
+  --bg-card: #FFF9E8;
+  --text-primary: #000000;
+  --text-secondary: #444444;
+  --accent-yellow: #F0A500;
+  --border-color: rgba(240, 165, 0, 0.18);
+
+  /* Gold Design System */
+  --gold: #FFD700;
+  --gold-dark: #B8860B;
+  --gold-light: #FFE566;
+  --gold-cream: #fffdf0;
+  --gold-cream-deep: #fff8d6;
+  --gold-border: rgba(184, 134, 11, 0.2);
+  --gold-border-hover: rgba(184, 134, 11, 0.45);
+  --gold-shadow: rgba(184, 134, 11, 0.18);
+  --gold-glow: rgba(184, 134, 11, 0.12);
+}
+
+.dark,
+[data-theme="dark"] {
+  /* Dark Mode */
+  --bg-main: #0B0B0B;
+  --bg-card: #151515;
+  --text-primary: #FFFFFF;
+  --text-secondary: #FFFFFF;
+  --accent-yellow: #F0A500;
+  --border-color: rgba(240, 165, 0, 0.12);
+}
+
+/* GLOBAL BASE STYLES */
+html,
+body,
+#root {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+/* UNIVERSAL TEXT VISIBILITY IN DARK MODE */
+.dark *,
+[data-theme="dark"] * {
+  color: var(--text-primary);
+}
+
+/* CARD COMPONENTS */
+.card,
+.panel,
+.sidebar,
+.template,
+.container {
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+/* SEARCH BAR PLACEHOLDER FIX */
+.dark input::placeholder,
+[data-theme="dark"] input::placeholder {
+  color: var(--text-primary);
+  opacity: 0.8;
+}
+
+/* SCROLLBARS — gold accent */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(184, 134, 11, 0.25);
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-dark);
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* DIVIDERS */
+hr,
+.divider,
+.scroll-line {
+  border-color: var(--border-color);
+  transition: border-color 0.25s ease;
+}
+
+/* SMOOTH TRANSITIONS */
+* {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* SPREADSHEET CELLS ALWAYS BLACK TEXT ON WHITE */
+table.border-collapse td input,
+table.border-collapse td div,
+table.border-collapse td span,
+table.border-collapse td {
+  color: #000000 !important;
+}
+
+table.border-collapse {
+  background-color: #ffffff !important;
+}
+
+/* ============================================================
+   RIBBON BUTTON SYSTEM — Gold accent, premium feel
+   ============================================================ */
+
+/* Base ribbon button */
+.ribbon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 3px 7px;
+  border-radius: 7px;
+  border: 1.5px solid transparent;
+  background: transparent;
+  color: #1a1a1a;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+}
+
+.ribbon-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--gold-cream) 0%, var(--gold-cream-deep) 100%);
+  border-color: var(--gold-border-hover);
+  box-shadow: 0 2px 8px var(--gold-shadow);
+  transform: translateY(-0.5px);
+}
+
+.ribbon-btn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 1px 4px var(--gold-shadow);
+}
+
+.ribbon-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.ribbon-btn.active {
+  background: linear-gradient(135deg, var(--gold-cream) 0%, #fff3b0 100%);
+  border-color: rgba(184, 134, 11, 0.4);
+  box-shadow: 0 2px 8px var(--gold-shadow);
+}
+
+/* Ribbon group separator */
+.ribbon-group-sep {
+  width: 1px;
+  height: 32px;
+  background: linear-gradient(180deg, transparent, rgba(184, 134, 11, 0.2), transparent);
+  flex-shrink: 0;
+}
+
+/* Ribbon section label */
+.ribbon-section-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  text-align: center;
+  margin-top: 2px;
+}
+
+/* Ribbon tabs button — override old green active */
+.ribbon-tab-button {
+  transition: all 0.15s ease !important;
+}
+
+.ribbon-tab-button:hover:not(:disabled) {
+  box-shadow: 0 4px 12px var(--gold-glow) !important;
+}
+
+.ribbon-tab-button:active,
+.ribbon-tab-button[aria-pressed="true"] {
+  box-shadow: 0 6px 18px var(--gold-shadow) !important;
+}
+
+/* Formula bar gold focus ring */
+.formula-bar-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(184, 134, 11, 0.15);
+}
+
+/* Sheet tab active gold top border */
+.sheet-tab-active {
+  border-top: 2.5px solid var(--gold-dark) !important;
+  color: var(--gold-dark) !important;
+  font-weight: 700 !important;
+  background: #ffffff !important;
+}
+
+.sheet-tab-inactive:hover {
+  background: var(--gold-cream) !important;
+  color: var(--gold-dark) !important;
+}

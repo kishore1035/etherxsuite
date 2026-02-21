@@ -1,0 +1,37 @@
+﻿
+> EtherX Excel App Design@0.1.0 build
+> vite build
+
+[36mvite v6.3.5 [32mbuilding for production...[36m[39m
+transforming...
+[32mΓ£ô[39m 2885 modules transformed.
+node.exe : [31mΓ£ù[39m Build failed in 
+24.60s
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" 
+"C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: 
+([31    mΓ£ù[39m Build failed in 
+24.60s:String) [],     RemoteException
+    + FullyQualifiedErrorId : 
+NativeCommandError
+ 
+[31merror during build:
+[31mCould not resolve entry module 
+"firebase/app".[31m
+    at getRollupError (file:///C:/Users/Reshma
+%20Banu/Downloads/etherxsuite-main%20(1)/ether
+xsuite-main/node_modules/rollup/dist/es/shared
+/parseAst.js:401:41)
+    at error (file:///C:/Users/Reshma%20Banu/D
+ownloads/etherxsuite-main%20(1)/etherxsuite-ma
+in/node_modules/rollup/dist/es/shared/parseAst
+.js:397:42)
+    at ModuleLoader.loadEntryModule (file:///C
+:/Users/Reshma%20Banu/Downloads/etherxsuite-ma
+in%20(1)/etherxsuite-main/node_modules/rollup/
+dist/es/shared/node-entry.js:21611:20)
+    at async Promise.all (index 0)
+    at async Promise.all (index 0)[39m
